@@ -315,7 +315,7 @@ class AzureStorageProvider(StorageProvider):
         """Handles deletion of all files from Azure Blob Storage."""
         try:
             blobs = self.container_client.list_blobs()
-            for blob in blobs:
+            for blob in blobs:        
                 self.container_client.delete_blob(blob.name)
         except Exception as e:
             raise RuntimeError(f"Error deleting all files from Azure Blob Storage: {e}")
